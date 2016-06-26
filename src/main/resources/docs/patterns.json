@@ -1,0 +1,208 @@
+{
+  "name": "tailor",
+  "patterns": [
+    {
+      "patternId": "upper-camel-case",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "lower-camel-case",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "constant-naming",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "constant-k-prefix",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "arrow-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angle-bracket-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "colon-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "comma-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "operator-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "leading-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "parenthesis-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "terminating-newline",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "trailing-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "comment-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "function-whitespace",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-class-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-class-length",
+          "default": 30
+        }
+      ]
+    },
+    {
+      "patternId": "max-closure-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-closure-length",
+          "default": 5
+        }
+      ]
+    },
+    {
+      "patternId": "max-file-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-file-length",
+          "default": 100
+        }
+      ]
+    },
+    {
+      "patternId": "max-function-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-function-length",
+          "default": 10
+        }
+      ]
+    },
+    {
+      "patternId": "max-struct-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-struct-length",
+          "default": 10
+        }
+      ]
+    },
+    {
+      "patternId": "max-line-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-line-length",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "patternId": "max-name-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max-name-length",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "patternId": "min-name-length",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "min-name-length",
+          "default": 2
+        }
+      ]
+    },
+    {
+      "patternId": "redundant-parentheses",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "brace-style",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "forced-type-cast",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "multiple-imports",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "terminating-semicolon",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "todo-syntax",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "redundant-optional-binding",
+      "level": "Error",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "trailing-closure",
+      "level": "Error",
+      "category": "CodeStyle"
+    }
+  ]
+}

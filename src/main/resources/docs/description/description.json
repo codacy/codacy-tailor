@@ -1,0 +1,236 @@
+[
+  {
+    "patternId": "upper-camel-case",
+    "title": "Enforce UpperCamelCase naming convention",
+    "description": "Enforces UpperCamelCase naming convention",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "lower-camel-case",
+    "title": "Enforce lowerCamelCase naming convention",
+    "description": "Enforces lowerCamelCase naming convention",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "constant-naming",
+    "title": "Enforce either UpperCamelCase or lowerCamelCase naming convention",
+    "description": "Global constants should follow either UpperCamelCase or lowerCamelCase naming conventions",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "constant-k-prefix",
+    "title": "Prohibit k-prefixed constants",
+    "description": "Prohibits k-prefixed constants",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "arrow-whitespace",
+    "title": "Enforce a single space before and after '->'",
+    "description": "Enforces a single space before and after '->'",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angle-bracket-whitespace",
+    "title": "Prohibit whitespace around angle brackets",
+    "description": "Prohibits whitespace immediately before/after an opening chevron < and before the closing chevron >",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "colon-whitespace",
+    "title": "Enforce whitespace surrounding the colon",
+    "description": "Enforces no whitespace preceding the colon and exactly one whitespace after the colon",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "comma-whitespace",
+    "title": "Enforce whitespace surrounding the comma",
+    "description": "Enforces no whitespace preceding the colon and exactly one whitespace after the comma",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "operator-whitespace",
+    "title": "Enforce whitespace surrounding operators",
+    "description": "Enforces single space around operator in operator declarations",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "leading-whitespace",
+    "title": "Enforce that source files begin with a non-whitespace character",
+    "description": "Enforces that source files begin with a non-whitespace character",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "parenthesis-whitespace",
+    "title": "Prohibit whitespace  before/after an opening parenthesis and before the closing parenthesis",
+    "description": "Prohibits whitespace before/after an opening parenthesis and before the closing parenthesis",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "terminating-newline",
+    "title": "Enforce that source files terminate with exactly one \\n character",
+    "description": "Enforces that source files terminate with exactly one \\n character",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "trailing-whitespace",
+    "title": "Prohibit whitespace after the last non-whitespace",
+    "description": "Prohibits whitespace after the last non-whitespace character on each line until the newline",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "comment-whitespace",
+    "title": "Enforce at least one whitespace character after a comment opening symbol",
+    "description": "Enforces at least one whitespace character after a comment opening symbol",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "function-whitespace",
+    "title": "Enforce one blank line before and after every function and method declaration",
+    "description": "Enforces one blank line before and after every function and method declaration",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "max-class-length",
+    "title": "Enforce a line limit on the lengths of class bodies",
+    "description": "Enforces a line limit on the lengths of class bodies",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-class-length",
+        "description": "Maximum length of class bodies"
+      }
+    ]
+  },
+  {
+    "patternId": "max-closure-length",
+    "title": "Enforce a line limit on the lengths of closure bodies",
+    "description": "Enforces a line limit on the lengths of closure bodies",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-closure-length",
+        "description": "Maximum length of closure bodies"
+      }
+    ]
+  },
+  {
+    "patternId": "max-file-length",
+    "title": "Enforce a line limit on the length of each file",
+    "description": "Enforces a line limit on the length of each file",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-file-length",
+        "description": "Maximum length of closure bodies"
+      }
+    ]
+  },
+  {
+    "patternId": "max-function-length",
+    "title": "Enforce a line limit on the lengths of function bodies",
+    "description": "Enforces a line limit on the lengths of function bodies",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-function-length",
+        "description": "Maximum length of function bodies"
+      }
+    ]
+  },
+  {
+    "patternId": "max-struct-length",
+    "title": "Enforce a line limit on the lengths of struct bodies",
+    "description": "Enforces a line limit on the lengths of struct bodies",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-struct-length",
+        "description": "Maximum length of struct bodies"
+      }
+    ]
+  },
+  {
+    "patternId": "max-line-length",
+    "title": "Enforce a character limit on the length of each line",
+    "description": "Enforces a character limit on the length of each line",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-line-length",
+        "description": "Maximum length of each line"
+      }
+    ]
+  },
+  {
+    "patternId": "max-name-length",
+    "title": "Enforce a character limit on the maximum length of a name",
+    "description": "Enforces a character limit on the maximum length of a name",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max-name-length",
+        "description": "Maximum length of each name"
+      }
+    ]
+  },
+  {
+    "patternId": "min-name-length",
+    "title": "Enforce a character limit on the minimum length of a name",
+    "description": "Enforces a character limit on the minimum length of a name",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "min-name-length",
+        "description": "Minimum length of each name"
+      }
+    ]
+  },
+  {
+    "patternId": "redundant-parentheses",
+    "title": "Prohibit parentheses around control flow constructs, exception handling constructs, and initializers",
+    "description": "Prohibits parentheses around control flow constructs, exception handling constructs, and initializers",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "brace-style",
+    "title": "Enforce the One True Brace Style",
+    "description": "Enforces the One True Brace Style (1TBS)",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "forced-type-cast",
+    "title": "Prohibit using the forced form of the type cast operator",
+    "description": "Prohibits using the forced form of the type cast operator (as!)",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "multiple-imports",
+    "title": "Prohibit multiple import statements on a single line",
+    "description": "Prohibits multiple import statements on a single line",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "terminating-semicolon",
+    "title": "Prohibit multiple statements on a single line",
+    "description": "Prohibits multiple statements on a single line",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "todo-syntax",
+    "title": "Enforce TODO comments syntax",
+    "description": "Enforce TODO comments syntax",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "redundant-optional-binding",
+    "title": "Prohibit consecutive var/let bindings on optional binding lists",
+    "description": "Prohibits consecutive var/let bindings on optional binding lists",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "trailing-closure",
+    "title": "Enforce trailing closure syntax for the last argument of a function",
+    "description": "Enforces trailing closure syntax for the last argument of a function",
+    "timeToFix": 5
+  }
+]
