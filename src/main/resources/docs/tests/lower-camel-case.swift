@@ -2,5 +2,5 @@
 
 var someVariable = someValue
 
-//#Err: lower-camel-case
+//#Info: lower-camel-case
 var Some_Var1able = someValue

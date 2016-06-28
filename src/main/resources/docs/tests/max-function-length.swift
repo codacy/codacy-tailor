@@ -1,6 +1,6 @@
 //#Patterns: max-function-length: {"max-function-length": 2}
 
-//#Issue: {"severity": "Error", "line": 5, "patternId": "max-function-length"}
+//#Issue: {"severity": "Info", "line": 5, "patternId": "max-function-length"}
 
 func helloWorld() {
     // Yada Yada.

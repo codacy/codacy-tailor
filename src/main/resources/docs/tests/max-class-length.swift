@@ -1,6 +1,6 @@
 //#Patterns: max-class-length: {"max-class-length": 3}
 
-//#Issue: {"severity": "Error", "line": 5, "patternId": "max-class-length"}
+//#Issue: {"severity": "Info", "line": 5, "patternId": "max-class-length"}
 
 class ThreeLineClass {
   let value = 42

@@ -8,7 +8,7 @@ class SomeClass : SomeSuperClass {
     // class definition goes here
 }
 
-//#Err: upper-camel-case
+//#Info: upper-camel-case
 class invalidClassName {
     // class definition goes here
 }

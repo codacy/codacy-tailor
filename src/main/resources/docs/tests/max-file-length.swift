@@ -1,6 +1,6 @@
 //#Patterns: max-file-length: {"max-file-length": 2}
 
-//#Issue: {"severity": "Error", "line": 3, "patternId": "max-file-length"}
+//#Issue: {"severity": "Info", "line": 3, "patternId": "max-file-length"}
 
 let myHello = "Hello,"
 let myHello = "Hello,"
