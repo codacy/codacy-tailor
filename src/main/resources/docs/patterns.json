@@ -3,82 +3,82 @@
   "patterns": [
     {
       "patternId": "upper-camel-case",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "lower-camel-case",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "constant-naming",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "constant-k-prefix",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "arrow-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "angle-bracket-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "colon-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "comma-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "operator-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "leading-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "parenthesis-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "terminating-newline",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "trailing-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "comment-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "function-whitespace",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "max-class-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -89,7 +89,7 @@
     },
     {
       "patternId": "max-closure-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -100,7 +100,7 @@
     },
     {
       "patternId": "max-file-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -111,7 +111,7 @@
     },
     {
       "patternId": "max-function-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -122,7 +122,7 @@
     },
     {
       "patternId": "max-struct-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -133,7 +133,7 @@
     },
     {
       "patternId": "max-line-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -144,7 +144,7 @@
     },
     {
       "patternId": "max-name-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -155,7 +155,7 @@
     },
     {
       "patternId": "min-name-length",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
@@ -166,42 +166,42 @@
     },
     {
       "patternId": "redundant-parentheses",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "brace-style",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "forced-type-cast",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "multiple-imports",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "terminating-semicolon",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "todo-syntax",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "redundant-optional-binding",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "trailing-closure",
-      "level": "Error",
+      "level": "Info",
       "category": "CodeStyle"
     }
   ]
