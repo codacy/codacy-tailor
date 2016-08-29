@@ -29,10 +29,13 @@ organization := "com.codacy"
 val tailorVersion = "0.10.0"
 
 val installAll =
-  s"""apk update && apk add bash curl &&
+  s"""apk --no-cache add bash curl &&
       |curl -#fLO https://github.com/sleekbyte/tailor/releases/download/v$tailorVersion/tailor-$tailorVersion.tar &&
       |tar -xvf tailor-$tailorVersion.tar &&
-      |mv tailor-$tailorVersion /usr/bin/tailor""".stripMargin.replaceAll(System.lineSeparator(), " ")
+      |mv tailor-$tailorVersion /usr/bin/tailor &&
+      |rm -rf tailor-$tailorVersion.tar
+      |apk del curl &&
+      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
@@ -52,7 +55,7 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "frolvlad/alpine-oraclejdk8"
+dockerBaseImage := "develar/java"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@Cmd("WORKDIR", _) => List(cmd,
@@ -60,7 +63,7 @@ dockerCommands := dockerCommands.value.flatMap {
   )
   case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "adduser -u 2004 -D docker"),
+    Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
   case other => List(other)
