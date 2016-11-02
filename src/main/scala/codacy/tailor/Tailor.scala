@@ -24,28 +24,30 @@ object Tailor extends Tool {
 
   override def apply(path: Path, conf: Option[List[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[List[Result]] = {
     Try {
+
+      lazy val nativeConfig = configFileNames.map(name => Try(new better.files.File(path) / name) )
+        .collectFirst{ case Success(file) if file.isRegularFile =>  List("-c",file.toJava.getAbsolutePath)}
+
       val filesToLint: List[String] = files.fold(List(path.toString)) {
         paths =>
           paths.map(_.toString).toList
       }
 
       val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
-      val configuration =
-        patternsToLintOpt.fold(List.empty[String]) {
-          case patternsToLint if patternsToLint.nonEmpty =>
-            val patternIds = patternsToLint.map(_.patternId)
-            val parameters = patternsToLint.flatMap(_.parameters).flatten.flatMap { parameter =>
-              List(s"--${parameter.name}", parameter.value.toString)
-            }
-            List("--only=" + patternIds.mkString(",")) ++ parameters
-          case _ => List.empty[String]
-        }
 
-      val command =
-        List("/usr/bin/tailor/bin/tailor",
-          "-f", "json") ++
-          configuration ++
-          List("--") ++ filesToLint
+      val configuration: Option[List[String]] = patternsToLintOpt.map{
+        case patternsToLint if patternsToLint.nonEmpty =>
+          val patternIds = patternsToLint.map(_.patternId)
+          val parameters = patternsToLint.flatMap(_.parameters).flatten.flatMap { parameter =>
+            List(s"--${parameter.name}", parameter.value.toString)
+          }
+          List("--only=" + patternIds.mkString(",")) ++ parameters
+        case _ => List.empty[String]
+      }
+
+      val cfgOpt = configuration.orElse(nativeConfig).getOrElse(List.empty)
+
+      val command = List("/usr/bin/tailor/bin/tailor", "-f", "json") ++ cfgOpt ++ List("--") ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
@@ -68,6 +70,8 @@ object Tailor extends Tool {
       }
     }.flatten
   }
+
+  private lazy val configFileNames = Set(".tailor.yml")
 
   private def parseToolResult(path: Path, output: List[String]): Try[List[Result]] = {
     Try(Json.parse(output.mkString)).flatMap(parseToolResult)
