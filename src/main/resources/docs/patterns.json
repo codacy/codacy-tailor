@@ -195,11 +195,6 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "redundant-optional-binding",
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
       "patternId": "trailing-closure",
       "level": "Info",
       "category": "CodeStyle"

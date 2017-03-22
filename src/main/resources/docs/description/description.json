@@ -222,12 +222,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "redundant-optional-binding",
-    "title": "Prohibit consecutive var/let bindings on optional binding lists",
-    "description": "Prohibits consecutive var/let bindings on optional binding lists",
-    "timeToFix": 5
-  },
-  {
     "patternId": "trailing-closure",
     "title": "Enforce trailing closure syntax for the last argument of a function",
     "description": "Enforces trailing closure syntax for the last argument of a function",
