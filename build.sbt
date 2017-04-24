@@ -26,7 +26,7 @@ version in Docker := "1.0"
 
 organization := "com.codacy"
 
-val tailorVersion = "0.11.1"
+val tailorVersion = "0.12.0"
 
 val installAll =
   s"""apk --no-cache add bash curl &&
