@@ -1,0 +1,1 @@
+Tailor is a cross-platform static analysis and lint tool for source code written in Apple's Swift programming language. It analyzes your code to ensure consistent styling and help avoid bugs. [Learn more](https://github.com/sleekbyte/tailor)
