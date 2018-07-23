@@ -1,10 +1,10 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
-name := """codacy-engine-tailor"""
+name := "codacy-tailor"
 
-version := "1.0-SNAPSHOT"
+version := "1.0.0-SNAPSHOT"
 
-val languageVersion = "2.11.7"
+val languageVersion = "2.11.12"
 
 scalaVersion := languageVersion
 
@@ -22,7 +22,7 @@ enablePlugins(JavaAppPackaging)
 
 enablePlugins(DockerPlugin)
 
-version in Docker := "1.0"
+version in Docker := "1.0.0-SNAPSHOT"
 
 organization := "com.codacy"
 

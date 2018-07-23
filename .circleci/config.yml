@@ -21,7 +21,7 @@ jobs:
       - run: 
           name: Publish tool docker locally
           working_directory: ~/workdir
-          command: sbt 'set version in Docker := "latest"' "set name := \"$CIRCLE_PROJECT_REPONAME\"" docker:publishLocal
+          command: ./scripts/publish.sh latest
       - save_cache:
           key: dependencies-{{ checksum "build.sbt" }}
           paths:
@@ -42,26 +42,19 @@ jobs:
           name: Test patterns
           working_directory: ~/codacy-plugins-test
           command: sbt -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=8 "run-main codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest"
-
-  deploy:
-    machine: true
-    steps:
-      - run:
-          name: Publish docker
+      - deploy:
+          name: Push application Docker image
           command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker login -u $DOCKER_USER -p $DOCKER_PASS
-              docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME
-              docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:1.0.$CIRCLE_BUILD_NUM
-              docker push codacy/$CIRCLE_PROJECT_REPONAME
+              docker tag ${CIRCLE_PROJECT_REPONAME}:latest codacy/$CIRCLE_PROJECT_REPONAME:latest
+              docker tag codacy/${CIRCLE_PROJECT_REPONAME}:latest codacy/$CIRCLE_PROJECT_REPONAME:1.0.$CIRCLE_BUILD_NUM
+              docker push codacy/$CIRCLE_PROJECT_REPONAME:1.0.$CIRCLE_BUILD_NUM
+              docker push codacy/$CIRCLE_PROJECT_REPONAME:latest
+            fi
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
