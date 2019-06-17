@@ -9,7 +9,8 @@ val languageVersion = "2.12.7"
 scalaVersion := languageVersion
 
 resolvers := Seq(
-  "Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/repositories/releases"),
+  "Sonatype OSS Snapshots".at(
+    "https://oss.sonatype.org/content/repositories/releases"),
   "Typesafe Repo".at("http://repo.typesafe.com/typesafe/releases/")
 ) ++ resolvers.value
 
