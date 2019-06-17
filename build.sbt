@@ -4,18 +4,19 @@ name := "codacy-tailor"
 
 version := "1.0.0-SNAPSHOT"
 
-val languageVersion = "2.11.12"
+val languageVersion = "2.12.7"
 
 scalaVersion := languageVersion
 
 resolvers := Seq(
-  "Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/repositories/releases"),
+  "Sonatype OSS Snapshots".at(
+    "https://oss.sonatype.org/content/repositories/releases"),
   "Typesafe Repo".at("http://repo.typesafe.com/typesafe/releases/")
 ) ++ resolvers.value
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-json" % "2.3.8",
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.1" withSources ()
+  "com.typesafe.play" %% "play-json" % "2.7.3",
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.9" withSources ()
 )
 
 enablePlugins(JavaAppPackaging)
