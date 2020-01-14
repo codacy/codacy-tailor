@@ -16,14 +16,9 @@ import scala.util.{Failure, Properties, Success, Try}
 
 case class TailorViolationLocation(line: Int, column: Option[Int])
 
-case class TailorViolation(severity: String,
-                           rule: String,
-                           location: TailorViolationLocation,
-                           message: String)
+case class TailorViolation(severity: String, rule: String, location: TailorViolationLocation, message: String)
 
-case class TailorFile(path: String,
-                      violations: List[TailorViolation],
-                      parsed: Boolean)
+case class TailorFile(path: String, violations: List[TailorViolation], parsed: Boolean)
 
 object TailorFile {
   implicit val tailorViolationLocationFmt = Json.format[TailorViolationLocation]
@@ -35,11 +30,12 @@ object Tailor extends Tool {
 
   private lazy val configFileNames = Set(".tailor.yml")
 
-  override def apply(source: Source.Directory,
-                     configuration: Option[List[Pattern.Definition]],
-                     files: Option[Set[Source.File]],
-                     options: Map[Options.Key, Options.Value])(
-      implicit specification: Specification): Try[List[Result]] = {
+  override def apply(
+      source: Source.Directory,
+      configuration: Option[List[Pattern.Definition]],
+      files: Option[Set[Source.File]],
+      options: Map[Options.Key, Options.Value]
+  )(implicit specification: Specification): Try[List[Result]] = {
     Try {
 
       lazy val nativeConfig = configFileNames
@@ -60,8 +56,7 @@ object Tailor extends Tool {
           val patternIds = patternsToLint.map(_.patternId)
           val parameters =
             patternsToLint.flatMap(_.parameters).flatten.flatMap { parameter =>
-              List(s"--${parameter.name}",
-                   paramValueToJsValue(parameter.value).toString)
+              List(s"--${parameter.name}", paramValueToJsValue(parameter.value).toString)
             }
           List("--only=" + patternIds.mkString(",")) ++ parameters
         case _ => List.empty[String]
@@ -69,8 +64,7 @@ object Tailor extends Tool {
 
       val cfgOpt = conf.orElse(nativeConfig).getOrElse(List.empty)
 
-      val command = List("/usr/bin/tailor/bin/tailor", "-f", "json") ++ cfgOpt ++ List(
-        "--") ++ filesToLint
+      val command = List("/usr/bin/tailor/bin/tailor", "-f", "json") ++ cfgOpt ++ List("--") ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
@@ -82,10 +76,8 @@ object Tailor extends Tool {
                    |${this.getClass.getSimpleName} exited with code ${resultFromTool.exitCode}
                    |command: ${command.mkString(" ")}
                    |message: ${e.getMessage}
-                   |stdout: ${resultFromTool.stdout.mkString(
-                     Properties.lineSeparator)}
-                   |stderr: ${resultFromTool.stderr.mkString(
-                     Properties.lineSeparator)}
+                   |stdout: ${resultFromTool.stdout.mkString(Properties.lineSeparator)}
+                   |stderr: ${resultFromTool.stderr.mkString(Properties.lineSeparator)}
                 """.stripMargin
               Failure(new Exception(msg))
           }
@@ -96,8 +88,7 @@ object Tailor extends Tool {
     }.flatten
   }
 
-  private def parseToolResult(path: Path,
-                              output: List[String]): Try[List[Result]] = {
+  private def parseToolResult(path: Path, output: List[String]): Try[List[Result]] = {
     Try(Json.parse(output.mkString)).flatMap(parseToolResult)
   }
 
@@ -125,15 +116,15 @@ object Tailor extends Tool {
       files.flatMap {
         case file if file.parsed =>
           file.violations.map { violation =>
-            Issue(Source.File(file.path),
-                  Result.Message(violation.message),
-                  Pattern.Id(violation.rule),
-                  Source.Line(violation.location.line))
+            Issue(
+              Source.File(file.path),
+              Result.Message(violation.message),
+              Pattern.Id(violation.rule),
+              Source.Line(violation.location.line)
+            )
           }
         case file =>
-          List(
-            FileError(Source.File(file.path), message = None)
-          )
+          List(FileError(Source.File(file.path), message = None))
       }
     }
   }
