@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<checkstyle version="1.5">
+    <file name="constant-naming.swift"></file>
+    <file name="function-whitespace.swift">
+        <error source="function-whitespace" line="9" message="Function should have at least one blank line after it" severity="info" />
+        <error source="function-whitespace" line="12" message="Function should have at least one blank line before it" severity="info" />
+    </file>
+</checkstyle>
