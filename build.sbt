@@ -4,9 +4,7 @@ name := "codacy-tailor"
 
 version := "1.0.0-SNAPSHOT"
 
-val languageVersion = "2.13.1"
-
-scalaVersion := languageVersion
+scalaVersion := "2.13.1"
 
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.7.4",
