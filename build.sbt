@@ -57,6 +57,7 @@ dockerCommands := dockerCommands.value.flatMap {
   case cmd @ Cmd("ADD", _) =>
     List(
       Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
+      Cmd("RUN", installAll),
       cmd,
       Cmd("RUN", "mv /opt/docker/docs /docs"),
       Cmd("RUN", s"chown -R $dockerUser:$dockerGroup /docs")
