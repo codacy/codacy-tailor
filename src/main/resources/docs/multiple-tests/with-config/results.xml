@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<checkstyle version="1.5">
+    <file name="constant-naming.swift">
+        <error source="constant-naming" line="7" message="Global Constant should be either lowerCamelCase or UpperCamelCase" severity="info" />
+    </file>
+    <file name="function-whitespace.swift"></file>
+</checkstyle>

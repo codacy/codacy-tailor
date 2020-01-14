@@ -1,0 +1,1 @@
+../../../tests/constant-naming.swift

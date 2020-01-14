@@ -1,0 +1,4 @@
+format: xcode
+
+only:
+  - constant-naming
