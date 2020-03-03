@@ -1,5 +1,6 @@
 {
-  "name": "tailor",
+  "name": "Tailor",
+  "version": "0.12.0",
   "patterns": [
     {
       "patternId": "upper-camel-case",

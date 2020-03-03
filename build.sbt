@@ -1,8 +1,23 @@
-import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
+import com.typesafe.sbt.packager.docker.Cmd
+import sjsonnew._
+import sjsonnew.BasicJsonProtocol._
+import sjsonnew.support.scalajson.unsafe._
+
+lazy val toolVersion = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
+toolVersion := {
+  case class Patterns(name: String, version: String)
+  implicit val patternsIso: IsoLList[Patterns] =
+    LList.isoCurried((p: Patterns) => ("name", p.name) :*: ("version", p.version) :*: LNil) {
+      case (_, n) :*: (_, v) :*: LNil => Patterns(n, v)
+    }
+
+  val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
+  val json = Parser.parseFromFile(jsonFile)
+  val patterns = json.flatMap(Converter.fromJson[Patterns])
+  patterns.get.version
+}
 
 name := "codacy-tailor"
-
-version := "1.0.0-SNAPSHOT"
 
 scalaVersion := "2.13.1"
 
@@ -15,13 +30,9 @@ enablePlugins(JavaAppPackaging)
 
 enablePlugins(DockerPlugin)
 
-version in Docker := "1.0.0-SNAPSHOT"
-
 organization := "com.codacy"
 
-val tailorVersion = "0.12.0"
-
-val installAll =
+def installAll(tailorVersion: String) =
   s"""apk --no-cache add bash curl &&
      |curl -#fLO https://github.com/sleekbyte/tailor/releases/download/v$tailorVersion/tailor-$tailorVersion.tar &&
      |tar -xvf tailor-$tailorVersion.tar &&
@@ -49,13 +60,13 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "develar/java"
+dockerBaseImage := "openjdk:8-jre-alpine"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd @ Cmd("ADD", _) =>
     List(
       Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
-      Cmd("RUN", installAll),
+      Cmd("RUN", installAll(toolVersion.value)),
       cmd,
       Cmd("RUN", "mv /opt/docker/docs /docs"),
       Cmd("RUN", s"chown -R $dockerUser:$dockerGroup /docs")
