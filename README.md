@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/71838d81708a4119a1baf325ed7ef4ee)](https://www.codacy.com/app/Codacy/codacy-tailor?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-tailor&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/71838d81708a4119a1baf325ed7ef4ee)](https://www.codacy.com/gh/codacy/codacy-tailor?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-tailor&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://circleci.com/gh/codacy/codacy-tailor.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-tailor)
 
 # Codacy Tailor
