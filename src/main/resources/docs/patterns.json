@@ -5,77 +5,92 @@
     {
       "patternId": "upper-camel-case",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "lower-camel-case",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "constant-naming",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "constant-k-prefix",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "arrow-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "angle-bracket-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "colon-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "comma-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "operator-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "leading-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "parenthesis-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "terminating-newline",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "trailing-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "comment-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "function-whitespace",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "max-class-length",
@@ -86,7 +101,8 @@
           "name": "max-class-length",
           "default": 30
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "max-closure-length",
@@ -97,7 +113,8 @@
           "name": "max-closure-length",
           "default": 5
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "max-file-length",
@@ -108,7 +125,8 @@
           "name": "max-file-length",
           "default": 100
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "max-function-length",
@@ -119,7 +137,8 @@
           "name": "max-function-length",
           "default": 10
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "max-struct-length",
@@ -130,7 +149,8 @@
           "name": "max-struct-length",
           "default": 10
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "max-line-length",
@@ -141,7 +161,8 @@
           "name": "max-line-length",
           "default": 120
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "max-name-length",
@@ -152,7 +173,8 @@
           "name": "max-name-length",
           "default": 20
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "min-name-length",
@@ -163,42 +185,50 @@
           "name": "min-name-length",
           "default": 2
         }
-      ]
+      ],
+      "enabled": false
     },
     {
       "patternId": "redundant-parentheses",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "brace-style",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "forced-type-cast",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "multiple-imports",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "terminating-semicolon",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "todo-syntax",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     },
     {
       "patternId": "trailing-closure",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": true
     }
   ]
 }
