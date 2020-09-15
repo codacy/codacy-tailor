@@ -48,7 +48,7 @@ object Tailor extends Tool {
       case patternsToLint if patternsToLint.nonEmpty =>
         val patternIds = patternsToLint.map(_.patternId)
         val parameters =
-          patternsToLint.flatMap(_.parameters).flatten.flatMap { parameter =>
+          patternsToLint.flatMap(_.parameters).flatMap { parameter =>
             List(s"--${parameter.name}", paramValueToJsValue(parameter.value).toString)
           }
         List("--only=" + patternIds.mkString(",")) ++ parameters
